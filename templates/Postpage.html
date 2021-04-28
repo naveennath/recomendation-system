@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Post</title>
+	<script src="jquery-3.5.1.min.js"></script>
+	<style>
+body{
+	font-family: 'Poppins', sans-serif;
+}
+input[type=file] {
+    display: none;
+}
+.choose-btn {
+    border-radius: 25px;
+    margin: 10px;
+    background: #555;
+    color: #fff;
+    padding: 10px;
+    padding-left: 100px;
+    padding-right: 100px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 13px;
+}
+.choose-btn:hover {
+    background: #24c7c7;
+}
+
+.txt{
+	display: block;
+	height: 50px;
+	width: 30%;
+	border-radius: 25px;
+	background-color: #fff;
+	outline: none;
+	border: 2px solid #E25098 ;
+	color: #E25098;
+	font-family: 'Poppins', sans-serif;
+	text-transform: uppercase;
+	padding-left: 20px; 
+	transition: .5s;
+}
+
+.txt1{
+	display: block;
+	height: 100px;
+	width: 30%;
+	border-radius: 25px;
+	background-color: #fff;
+	outline: none;
+	border: 2px solid #E25098 ;
+	color: #E25098;
+	font-family: 'Poppins', sans-serif;
+	text-transform: uppercase;
+	padding-left: 20px; 
+	transition: .5s;
+}
+
+.btn {
+    display: block;
+    width: 32%;
+    height: 50px;
+    border-radius: 25px;
+    outline: none;
+    border: none;
+    background-color: #746CFF;
+    background-size: 200%;
+    font-size: 1.2rem;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: .5s;
+    margin-bottom: 50px;
+}
+	</style>
+</head>
+
+
+
+<body>
+
+<center>
+<h1>Post your products here!</h1>
+<input type="text" class="txt" name="product_name" placeholder="Product name">
+<h2>Upload image of the product</h2>
+<label for="hiddenBtn" class="choose-btn" id="chooseBtn">Choose</label>
+    <input type="file" id="hiddenBtn"><br><br><br>
+<input type="text" class="txt1" name="product_description" placeholder="Product Description"><br>
+<input type="text" class="txt" name="product_price" placeholder="Product Price"><br>
+<input type="submit" class="btn" name="submit" value="Post">
+</center>
+
+
+<script type="text/javascript">
+var hiddenBtn = document.getElementById('hiddenBtn');
+var chooseBtn = document.getElementById('chooseBtn');
+
+hiddenBtn.addEventListener('change', function() {
+    if (hiddenBtn.files.length > 0) {
+        chooseBtn.innerText = hiddenBtn.files[0].name;
+    } else {
+        chooseBtn.innerText = 'Choose';
+    }
+});
+
+</script>
+</body>
+</html>
